@@ -1,9 +1,12 @@
 import React, {
     ChangeEvent,
     DetailedHTMLProps,
-    InputHTMLAttributes,
+    InputHTMLAttributes, useState,
 } from 'react'
 import s from './SuperCheckbox.module.css'
+import {Simulate} from 'react-dom/test-utils';
+import change = Simulate.change;
+import {Checkbox} from '@mui/material';
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
@@ -26,11 +29,20 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // задачка на написание онченджа
 
-    }
 
+
+
+        const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+            // задачка на написание онченджа
+            const Checkbox = () => {
+                // Шаг 2: Создаем состояние для чекбокса
+                const [change ,setChange] = useState(false);
+                // Шаг 3: Обработчик изменений
+                setChange(e.currentTarget.checked); // Обновляем состояние чекбокс
+
+            }
+        }
     const finalInputClassName = s.checkbox
         + (className ? ' ' + className : '')
 

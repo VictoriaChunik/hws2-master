@@ -3,6 +3,7 @@ import s from './Stand.module.css'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 import SuperButton from './common/c2-SuperButton/SuperButton'
+import {Button, Checkbox} from '@mui/material';
 
 const Stand = () => {
     const [stateForAllInputs, setValue] = useState<string>('')
@@ -41,19 +42,25 @@ const Stand = () => {
             </div>
 
             <div className={s.buttons}>
+                {/*дабавила кнопку*/}
+                <Button className='button'>0бычная</Button>
                 {/*обычная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-default'}>
-                        default
+                        <Button className='default'>default</Button>
+                        {/*default*/}
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-red'} xType={'red'}>
-                        red
+                        <Button className='red'>red</Button>
+                        {/*red*/}
                     </SuperButton>
                 </div>
+
                 {/*задизэйбленная кнопка:*/}
+                <Button className='disabled'></Button>
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
@@ -64,6 +71,8 @@ const Stand = () => {
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}
+                <Button className='disabled'></Button>
+
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
@@ -76,6 +85,9 @@ const Stand = () => {
 
             <div className={s.checkboxes}>
                 {/*чекбокс с текстом:*/}
+                <Checkbox />
+                <label>Hometask</label>
+
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}

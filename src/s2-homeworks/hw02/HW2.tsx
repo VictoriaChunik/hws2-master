@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
-import Affair from './affairs/affair/Affair';
+// import Affair from './affairs/affair/Affair';
 
 
 /*

@@ -22,7 +22,7 @@
 
 .button {
     padding: 5px 15px;
-
+    /*display: block;*/
     background: transparent;
     color: var(--color);
 
@@ -53,3 +53,4 @@
     flex-wrap: wrap;
     max-width: 450px;
 }
+

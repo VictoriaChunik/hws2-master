@@ -23,6 +23,7 @@ const Stand = () => {
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
+
                 <div>
                     <SuperInputText
                         id={'hw4-super-input-with-error'}
@@ -33,7 +34,7 @@ const Stand = () => {
                             setError(
                                 stateForAllInputs.trim()
                                     ? ''
-                                    : 'Error'
+                                    : 'error'
                             )
                             setValue('')
                         }}
@@ -42,25 +43,20 @@ const Stand = () => {
             </div>
 
             <div className={s.buttons}>
-                {/*дабавила кнопку*/}
-                <Button className='button'>0бычная</Button>
                 {/*обычная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-default'}>
-                        <Button className='default'>default</Button>
-                        {/*default*/}
+                        default
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-red'} xType={'red'}>
-                        <Button className='red'>red</Button>
-                        {/*red*/}
+                        red
                     </SuperButton>
                 </div>
 
                 {/*задизэйбленная кнопка:*/}
-                <Button className='disabled'></Button>
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
@@ -71,8 +67,6 @@ const Stand = () => {
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}
-                <Button className='disabled'></Button>
-
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
@@ -85,9 +79,6 @@ const Stand = () => {
 
             <div className={s.checkboxes}>
                 {/*чекбокс с текстом:*/}
-                <Checkbox />
-                <label>Hometask</label>
-
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}

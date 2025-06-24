@@ -21,6 +21,8 @@ import GreetingContainer from './GreetingContainer'
 export type UserType = {
     _id: string // need to fix any
     name: string // need to fix any
+
+
 }
 
 export const pureAddUserCallback = ( name: string, setUsers: (users: UserType[]) => void, users: UserType[])=>{
@@ -33,6 +35,7 @@ export const pureAddUserCallback = ( name: string, setUsers: (users: UserType[])
 }
 
 const HW3 = () => {
+                                // дабавила pureAddUserCallback
     const [users, setUsers] = useState< UserType[]>([]) // need to fix any
 
     const addUserCallback = (name: string) => { // need to fix any

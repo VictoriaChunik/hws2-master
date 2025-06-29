@@ -25,7 +25,6 @@ export type MessageType = {
         time: `${number}:${number}`
     }
 }
-//any
 
 // структуру объекта не менять
 export const message0: MessageType = {

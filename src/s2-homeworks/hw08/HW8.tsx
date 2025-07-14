@@ -15,6 +15,7 @@ export type UserType = {
     _id: number
     name: string
     age: number
+
 }
 
 const initialPeople: UserType[] = [
@@ -49,6 +50,7 @@ const HW8 = () => {
     const check18 = () => {
         setPeople(
             homeWorkReducer(initialPeople, {type: 'check', payload: 18})
+
         ) // совершеннолетние
         setCurrentSort('18')
     }

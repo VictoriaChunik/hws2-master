@@ -4,25 +4,23 @@ type ActionType =
     | { type: 'sort'; payload: 'up' | 'down' }
     | { type: 'check'; payload: number }
 
-export const homeWorkReducer = (state: UserType[], action: ActionType):UserType[]  => { // need to fix any
+export const homeWorkReducer = (state: UserType[], action: ActionType): UserType[] => {
     switch (action.type) {
-        case 'sort': { // by name
-            // Создаем копию массива, чтобы не мутировать исходный state
-            const newState = [...state];
+        case 'sort': {
+            const newState = [...state]; // 1. Копируем
 
-            if(action.payload === 'up'){
-                // Сортировка по имени в алфавитном порядке (A-Z)
-                newState.sort((a, b) => a.name.localeCompare(b.name));
-            }else if (action.payload === 'down') {
-                // Сортировка по имени в обратном порядке (Z-A)
-                newState.sort((a, b) => b.name.localeCompare(a.name));
+            if (action.payload === 'up') {
+                newState.sort((a, b) => a.name.localeCompare(b.name)); // 2. Сортируем A→Я
+            } else {
+                newState.sort((a, b) => b.name.localeCompare(a.name)); // 3. Сортируем Я→A
             }
-            return state // need to fix
+
+            return newState;
         }
         case 'check': {
-            return state.filter(user => user.age >= action.payload)// need to fix
+            return state.filter(user => user.age >= action.payload); // Фильтр 18+
         }
         default:
-            return state
+            return state;
     }
 }

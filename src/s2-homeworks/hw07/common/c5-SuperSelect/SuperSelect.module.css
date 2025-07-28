@@ -1,9 +1,16 @@
 .select {
+    width: 166px;
+    height: 24px;
+    border-radius: 3px;
 }
 
 .select:focus {
+    outline: none;
+
 }
 
 
 .option:hover {
+    outline: 0.75rem;
 }
+

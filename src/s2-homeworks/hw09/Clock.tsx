@@ -40,9 +40,7 @@ function Clock() {
     }
 
     // const stringTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`// часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringTime = `${String(date.getHours()).padStart(2, '0')}
-    :${String(date.getMinutes()).padStart(2, '0')}
-    :${String(date.getSeconds()).padStart(2, '0')}`;
+    const stringTime = `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
 
 
     // const stringDate =`${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`// день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
@@ -97,7 +95,7 @@ function Clock() {
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={timerId !== undefined} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={timerId === undefined} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop

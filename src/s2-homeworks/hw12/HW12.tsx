@@ -20,8 +20,8 @@ const themes = [
 
 const HW12 = () => {
     // взять ид темы из редакса
+    const themeId = useSelector((state: { theme: ThemeState }) => state.theme.themeId)
 
-    const themeId = useSelector((state: {themeReducer: ThemeState}) => state.themeReducer.themeId)
     // добавила сама
     const dispatch = useDispatch()
 

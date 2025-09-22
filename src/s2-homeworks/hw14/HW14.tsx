@@ -33,23 +33,31 @@ const HW14 = () => {
     const sendQuery = (value: string) => {
         setLoading(true)
         getTechs(value)
+
             .then((res) => {
                 // делает студент
-
+                if (res && res.data) {
+                    setTechs(res.data.techs)
+                }
+                setLoading(false)
                 // сохранить пришедшие данные
-
-                //
             })
+            .catch((error) => {
+                setLoading(false)
+            })
+
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-
         // добавить/заменить значение в квери урла
-        // setSearchParams(
+        if (value) {
+            setSearchParams({find: value})// если есть текст поиска
+        }else {
+            setSearchParams({}) // если текст пустой, очищаем параметры
+        }
 
-        //
     }
 
     useEffect(() => {

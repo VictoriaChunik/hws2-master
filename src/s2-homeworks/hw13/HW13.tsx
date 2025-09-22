@@ -68,7 +68,7 @@ const HW13 = () => {
                         setCode('Error!')
                         setImage(errorUnknown)
                         setText(e.message)
-                        setInfo('Network error')
+                        setInfo('Error')
                         setIsLoading(false)
 
                     }

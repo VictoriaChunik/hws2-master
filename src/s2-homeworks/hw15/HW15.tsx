@@ -53,34 +53,51 @@ const HW15 = () => {
             .then((res) => {
                 // делает студент
 
-                // сохранить пришедшие данные
-
-                //
+                // 1. Проверить что res существует
+                if(res){
+                    // 2. Сохранить res.data.techs в setTechs
+                    setTechs(res.data.techs)
+                    // 3. Сохранить res.data.totalCount в setTotalCount
+                    setTotalCount(res.data.totalCount)
+                    // отключаем крутилку
+                    setLoading(false)
+                }
             })
+            .catch((err) => {
+                // 5. Обработать ошибку
+                console.log(err)
+                // 6.убрать лоадер даже при ошибке
+                 setLoading(false)
+            })
+
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
+        // сохранить новую страницу
+         setPage(newPage)
+        // сохранить новое количество элементов
+         setCount(newCount)
+        // Отправить запрос: загрузить данные с новыми параметрами
+         sendQuery({page: newPage, count: newCount, sort})
+        //Обновить URL параметры:
+         setSearchParams({page: newPage.toString(), count: newCount.toString()})
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        //Обновить state сортировки
+         setSort(newSort)
+        // при сортировке сбрасывать на 1 страницу
+        setPage(1)
+        //Отправить запрос с новыми параметрами
+         sendQuery({sort: newSort, page: 1, count: count})
+        //Обновить URL параметры
+         setSearchParams({sort: newSort, page: '1', count: count.toString()})
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
     }
 
     useEffect(() => {
